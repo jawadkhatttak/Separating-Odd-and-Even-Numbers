@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Exercise</title>
+    <style>
+        .container{
+            display: flex;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- take array of 20 and sort it (separate even, odd)
+    10-20 elements foreach -->
+    <h1>Separating Odd And Even:</h1>
+    <div class="container">
+
+        <ul id="whole">Whole Array:</ul>
+        <ul id="even">Even Numbers:</ul>
+        <ul id="odd">Odd Numbers:</ul>
+    </div>
+    <script>
+        let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+        let evenArray = []
+        let oddArray = []
+        const whole = document.querySelector("#whole")
+        const even = document.querySelector("#even")
+        const odd = document.querySelector("#odd")
+
+        array.forEach(element => {
+            if (element % 2 === 0) {
+                // console.log(element + " is even")
+                evenArray.push(element)
+            }
+            else {
+                // console.log(element + " is odd")
+                oddArray.push(element)
+
+            }
+        });
+
+        array.forEach(element => {
+            const li = document.createElement('li')
+            li.textContent = element
+            whole.appendChild(li)
+        })
+        evenArray.forEach(element => {
+            const li = document.createElement('li')
+            li.textContent = element
+            even.appendChild(li)
+        })
+
+        oddArray.forEach(element => {
+            const li = document.createElement('li')
+            li.textContent = element
+            odd.appendChild(li)
+        }) 
+    </script>
+</body>
+
+</html>
